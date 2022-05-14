@@ -1,0 +1,50 @@
+version: 2.1
+jobs:
+  Deploy_GitHub_Pages:
+    working_directory: ~/work_space
+    docker:
+      - image: cimg/node:16.15.0
+    steps:
+      - checkout
+      - run:
+          name: Version
+          command: |
+            git --version
+            node --version
+            npm --version
+      - run:
+          name: Install Dependencies
+          command: npm ci
+      - run:
+          name: Build
+          command: npm run build
+      - run:
+          name: Deploy
+          command: |
+            cd ./docs/.vitepress/dist
+            git init
+            git config user.name "Circle CI"
+            git config user.email "deploy@circleci.com"
+            git add -A
+            git commit -m "documents: Circle CI Automatic Deployment"
+            git push -f "git@github.com:dotkiro/dotkiro.github.io.git" master:GitHub_Pages
+workflows:
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+                - development
+    jobs:
+       - Deploy_GitHub_Pages
+  default_workflow:
+    jobs:
+      - Deploy_GitHub_Pages:
+        filters:
+            branches:
+              only:
+                - main
+                - development

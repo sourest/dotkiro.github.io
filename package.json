@@ -1,0 +1,33 @@
+{
+  "name": "dotkiro.github.io",
+  "version": "0.0.1",
+  "description": "Kiro's Personal Logs Repository.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress serve docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotkiro/dotkiro.github.io.git"
+  },
+  "keywords": [
+    "Logs",
+    "Documents",
+    "Kiro",
+    "Dot"
+  ],
+  "author": "Kiro",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/dotkiro/dotkiro.github.io/issues"
+  },
+  "homepage": "https://github.com/dotkiro/dotkiro.github.io#readme",
+  "devDependencies": {
+    "vitepress": "^0.22.4"
+  }
+}
