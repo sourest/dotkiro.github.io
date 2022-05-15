@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VitePress 教程 | Logs</title>
+    <meta name="description" content="Kiro's Logs">
+    <link rel="stylesheet" href="/assets/style.e6ac6c2e.css">
+    <link rel="modulepreload" href="/assets/chunks/AlgoliaSearchBox.8caa2d0e.js">
+    <link rel="modulepreload" href="/assets/app.b331f974.js">
+    <link rel="modulepreload" href="/assets/StaticSite_VitePress.md.7ea4bf7b.lean.js">
+    
+    <meta name="twitter:title" content="VitePress 教程 | Logs">
+  <meta property="og:title" content="VitePress 教程 | Logs">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-675d8756><div class="sidebar-button" data-v-675d8756><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/" aria-label="Logs, back to home" data-v-675d8756 data-v-cc01ef16><!----> Logs</a><div class="flex-grow" data-v-675d8756></div><div class="nav" data-v-675d8756><!----></div><!--[--><!--[--><div class="algolia-search-box" id="docsearch"></div><!--]--><!--]--></header><aside class="sidebar" data-v-83e92a68><!----><!--[--><!--]--><ul class="sidebar-links" data-v-83e92a68><!--[--><li class="sidebar-link"><a class="sidebar-link-item" href="#什么是-vitepress">什么是 VitePress</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#安装">安装</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#配置">配置</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#使用">使用</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#部署">部署</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#ftp-部署">FTP 部署</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#github-pages-部署">GitHub Pages 部署</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#gitlab-pages-部署">GitLab Pages 部署</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="#对比">对比</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#与-vuepress-v1-对比">与 VuePress v1 对比</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#与-gatsby-对比">与 Gatsby 对比</a><!----></li></ul></li><!--]--></ul><!--[--><!--]--></aside><div class="sidebar-mask"></div><main class="page" data-v-7eddb2c4><div class="container" data-v-7eddb2c4><!--[--><!--]--><div style="position:relative;" class="content" data-v-7eddb2c4><div><h1 id="vitepress-教程" tabindex="-1">VitePress 教程 <a class="header-anchor" href="#vitepress-教程" aria-hidden="true">#</a></h1><h2 id="什么是-vitepress" tabindex="-1">什么是 VitePress <a class="header-anchor" href="#什么是-vitepress" aria-hidden="true">#</a></h2><p><a href="https://vitepress.vuejs.org/" target="_blank" rel="noopener noreferrer">VitePress</a> 是尤大基于其开发的下一代前端工程构建工具 <a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">Vite</a> 开发的类比 <a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener noreferrer">VuePress</a> 的文档生成器。</p><p>同时本站点基于 <code>VitePress</code> 建立，在此作鸣谢。</p><h2 id="安装" tabindex="-1">安装 <a class="header-anchor" href="#安装" aria-hidden="true">#</a></h2><p>安装环境：NodeJS &gt; 12.0</p><p>第一步，在你的项目中安装 <code>VitePress</code></p><div class="language-shell"><pre><code><span class="token function">npm</span> <span class="token function">install</span> --save-dev vitepress
+</code></pre></div><p>第二步，在你的项目 <code>package.json</code> 文件中添加一些脚步</p><div class="language-json"><pre><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;docs:dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vitepress dev docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;docs:build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vitepress build docs&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;docs:serve&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vitepress serve docs&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>至此你已经完成了 VitePress 的安装，接下来你可以在你的项目根目录下的 <code>docs</code> 文件夹下创建你的 <code>markdown</code> 文档了。</p><h2 id="配置" tabindex="-1">配置 <a class="header-anchor" href="#配置" aria-hidden="true">#</a></h2><p>你的项目文档目录应当是这样的：</p><div class="language-shell"><pre><code><span class="token builtin class-name">.</span>
+├─ docs
+│  ├─ .vitepress
+│  │  └─ config.ts
+│  └─ index.md
+└─ package.json
+</code></pre></div><p>其中 <code>docs/.vitepress/config.ts</code> 是 VitePress 的配置文件，你可以在这里配置你的项目文档的一些基本信息，并将配置信息导出</p><div class="language-ts"><pre><code><span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&#39;vitepress&#39;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  title<span class="token operator">:</span> <span class="token string">&#39;Hello World&#39;</span><span class="token punctuation">,</span>
+  description<span class="token operator">:</span> <span class="token string">&#39;This is a VitePress project&#39;</span><span class="token punctuation">,</span>
+  <span class="token comment">// And more...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>具体配置信息可以参考 <a href="https://vitepress.vuejs.org/config/basics.html" target="_blank" rel="noopener noreferrer">VitePress 配置文档</a>。</p><h2 id="使用" tabindex="-1">使用 <a class="header-anchor" href="#使用" aria-hidden="true">#</a></h2><p>启动开发服务器：</p><div class="language-shell"><pre><code><span class="token function">npm</span> run docs:dev
+</code></pre></div><p>VitePress 将在 <code>http://localhost:3000/</code> 监听你的项目文档目录，你可以在浏览器中访问。</p><p>生成文档：</p><div class="language-shell"><pre><code><span class="token function">npm</span> run docs:build
+</code></pre></div><p>VitePress 将生成你的项目文档，你可以在 <code>docs/.vitepress/dist</code> 中查看你的静态站点文件。</p><p>启动静态服务器：</p><div class="language-shell"><pre><code><span class="token function">npm</span> run docs:serve
+</code></pre></div><p>VitePress 将在 <code>http://localhost:5000/</code> 启动你的文静态站点服务器。</p><h2 id="部署" tabindex="-1">部署 <a class="header-anchor" href="#部署" aria-hidden="true">#</a></h2><h3 id="ftp-部署" tabindex="-1">FTP 部署 <a class="header-anchor" href="#ftp-部署" aria-hidden="true">#</a></h3><p>您可以运行 <code>npm run docs:build</code> 命令来构建文档。</p><div class="language-shell"><pre><code><span class="token function">npm</span> run docs:build
+</code></pre></div><p>默认情况下，构建输出将放置在 <code>.vitepress/dist</code>。您可以将此文件夹部署 dist 到您喜欢的任何平台，如果你使用 FTP，那么此时可以将其打包上传到你的服务器。</p><h3 id="github-pages-部署" tabindex="-1">GitHub Pages 部署 <a class="header-anchor" href="#github-pages-部署" aria-hidden="true">#</a></h3><ol><li><p>在 <code>docs/.vitepress/config.js</code> 中设置正确的 <code>base</code>。</p><p>如果您要部署到 <code>https://&lt;USERNAME&gt;.github.io/</code>，则可以省略设置 <code>base</code>，因为它默认为 <code>&#39;/&#39;</code>。</p><p>如果您要部署到 <code>https://&lt;USERNAME&gt;.github.io/&lt;REPOSITORY&gt;/</code>，例如您的存储库位于 <code>https://github.com/&lt;USERNAME&gt;/&lt;REPOSITORY&gt;</code>，则设置 <code>base</code> 为 <code>&#39;/&lt;REPOSITORY&gt;/&#39;</code>。</p></li><li><p>在项目的根目录下创建一个名为 <code>.travis.yml</code> 的 <a href="https://www.travis-ci.com/" target="_blank" rel="noopener noreferrer">Travis CI</a> 配置文件。</p></li><li><p>在本地运行 <code>npm install</code> 并提交生成的 <code>package-lock.json</code> 锁文件。</p></li><li><p>配置 <code>.travis.yml</code>：</p></li></ol><div class="language-shell"><pre><code>language: node_js
+node_js:
+  - lts/*
+install:
+  - <span class="token function">npm</span> ci
+script:
+  - <span class="token function">npm</span> run docs:build
+deploy:
+  provider: pages
+  skip_cleanup: <span class="token boolean">true</span>
+  local_dir: docs/.vitepress/dist
+  github_token: <span class="token variable">$GITHUB_TOKEN</span>
+  keep_history: <span class="token boolean">true</span>
+  on:
+    branch: main
+</code></pre></div><h3 id="gitlab-pages-部署" tabindex="-1">GitLab Pages 部署 <a class="header-anchor" href="#gitlab-pages-部署" aria-hidden="true">#</a></h3><ol><li><p>在 <code>docs/.vitepress/config.js</code> 中设置正确的 <code>base</code>。</p><p>如果您要部署到 <code>https://&lt;USERNAME&gt;.gitlab.io/</code>，则可以省略设置 <code>base</code>，因为它默认为 <code>&#39;/&#39;</code>。</p><p>如果您要部署到 <code>https://&lt;USERNAME&gt;.gitlab.io/&lt;REPOSITORY&gt;/</code>，例如您的存储库位于 <code>https://gitlab.com/&lt;USERNAME&gt;/&lt;REPOSITORY&gt;</code>，则设置 <code>base</code> 为 <code>&#39;/&lt;REPOSITORY&gt;/&#39;</code>。</p></li><li><p>在项目的根目录下创建一个名为 <code>.gitlab-ci.yml</code> 的 <code>GitLab CI</code> 配置文件。</p></li><li><p>在本地运行 <code>npm install</code> 并提交生成的 <code>package-lock.json</code> 锁文件。</p></li><li><p>配置 <code>.gitlab-ci.yml</code>：</p></li></ol><div class="language-yaml"><pre><code><span class="token key atrule">image</span><span class="token punctuation">:</span> node<span class="token punctuation">:</span>16.5.0
+<span class="token key atrule">pages</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> deploy
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> node_modules/
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> npm ci
+    <span class="token punctuation">-</span> npm run docs<span class="token punctuation">:</span>build
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> docs/.vitepress/dist
+  <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">if</span><span class="token punctuation">:</span> $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+</code></pre></div><h2 id="对比" tabindex="-1">对比 <a class="header-anchor" href="#对比" aria-hidden="true">#</a></h2><h3 id="与-vuepress-v1-对比" tabindex="-1">与 <a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener noreferrer">VuePress</a> v1 对比 <a class="header-anchor" href="#与-vuepress-v1-对比" aria-hidden="true">#</a></h3><ol><li>使用 Vue 3</li><li>使用 Vite</li><li>不使用 <code>vue-router</code>，使用简单的自定义路由</li><li>从实用主义出发，更加简洁</li><li>还无稳定版</li></ol><h3 id="与-gatsby-对比" tabindex="-1">与 <a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener noreferrer">Gatsby</a> 对比 <a class="header-anchor" href="#与-gatsby-对比" aria-hidden="true">#</a></h3><ol><li>学习成本低</li><li>设计更加简洁</li><li>使用 Vue 3</li><li>使用 Vite</li><li>还无稳定版</li><li>生态不如 Gatsby</li></ol></div></div><footer class="page-footer" data-v-7eddb2c4 data-v-07c132fc><div class="edit" data-v-07c132fc><div class="edit-link" data-v-07c132fc data-v-1ed99556><!----></div></div><div class="updated" data-v-07c132fc><!----></div></footer><!----><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"html_html5.md\":\"eb445b45\",\"staticsite_vitepress.md\":\"7ea4bf7b\",\"index.md\":\"85c9119b\"}")</script>
+    <script type="module" async src="/assets/app.b331f974.js"></script>
+    
+  </body>
+</html>
